@@ -1,0 +1,19 @@
+.todo{
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.todo:hover{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.done{
+	text-decoration: line-through;
+	color: red;
+	cursor: pointer;
+	font-size: 20px;
+}
+.done:hover{
+	font-weight: bold;
+}
