@@ -1,5 +1,26 @@
 $(document).ready(function(){
-	$('form#entertask').submit(function(event){
+	$('#addlist').submit(function(event){
+		event.preventDefault();
+		var inputListName = $('#createList').val();
+		
+		if(inputListName !== ""){
+			var newList = {title: inputListName};
+			$('#lists').append('<li class = "listname">' + newList.title + '</li>');
+			$('.form-group').removeClass('has-error');
+			$('#addlist')[0].reset();
+		}else{
+			alert("Please enter a list name");
+			$('#createlist').addClass('has-error');
+		}
+	});
+
+
+
+
+
+
+
+	/*$('form#entertask').submit(function(event){
 		event.preventDefault();
 
 		var inputTask = $('input#addtask').val();
@@ -16,7 +37,7 @@ $(document).ready(function(){
 		$('li.todo').hover().click(function(){
 			$(this).removeClass('todo').addClass('done');
 		});
-	});
+	});*/
 });
 
 //need to add delete task code

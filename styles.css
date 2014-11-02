@@ -1,11 +1,15 @@
-.todo{
+li{
+	list-style-type: none;
+}
+.todo, .listname{
 	font-size: 20px;
 	cursor: pointer;
 }
 
-.todo:hover{
+.todo:hover, .listname:hover{
 	text-decoration: underline;
 	font-weight: bold;
+	color: blue;
 }
 
 .done{
