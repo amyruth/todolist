@@ -15,11 +15,11 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#lists').on('click', '.listname', function(){
+	$('.listname').last().click(function(){
 		currentList = newList;
 		$('#list-title').text(currentList.title);
-		
 	});
+	
 
 
 
