@@ -1,10 +1,11 @@
 $(document).ready(function(){
+	var currentList, newList;
 	$('#addlist').submit(function(event){
 		event.preventDefault();
 		var inputListName = $('#createList').val();
 		
 		if(inputListName !== ""){
-			var newList = {title: inputListName};
+			newList = {title: inputListName, tasks: []};
 			$('#lists').append('<li class = "listname">' + newList.title + '</li>');
 			$('.form-group').removeClass('has-error');
 			$('#addlist')[0].reset();
@@ -12,6 +13,12 @@ $(document).ready(function(){
 			alert("Please enter a list name");
 			$('#createlist').addClass('has-error');
 		}
+	});
+
+	$('#lists').on('click', '.listname', function(){
+		currentList = newList;
+		$('#list-title').text(currentList.title);
+		
 	});
 
 
