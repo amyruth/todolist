@@ -9,16 +9,20 @@ $(document).ready(function(){
 			$('#lists').append('<li class = "listname">' + newList.title + '</li>');
 			$('.form-group').removeClass('has-error');
 			$('#addlist')[0].reset();
+			currentList = newList;
 		}else{
 			alert("Please enter a list name");
 			$('#createlist').addClass('has-error');
 		}
+
+		$('.listname').last().click(function(){
+			$('#list-name').text(newList.title);
+		});
 	});
 
-	$('.listname').last().click(function(){
-		currentList = newList;
-		$('#list-title').text(currentList.title);
-	});
+	
+
+	
 	
 
 
